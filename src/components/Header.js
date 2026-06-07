@@ -4,10 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiLight } from "react-icons/ci";
+import { toast } from "react-toastify";
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [Theam,setTheam] =  useState()
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -17,6 +19,13 @@ export default function Header() {
     { name: "Blog", href: "/blog" },
     // { name: "Contact", href: "/contactUs" },
   ];
+
+  const handleBGTheam =()=>{
+      toast.info("This feature is coming soon!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
 
   return (
     <header className="sticky top-0 z-50 bg-pink-100 shadow">
@@ -48,7 +57,8 @@ export default function Header() {
         </nav>
 
         <button
-          className="hidden lg:block bg-pink-600 text-white px-5 py-2 rounded"
+          className="hidden lg:block bg-pink-600 text-white px-5 py-2 rounded cursor-pointer"
+          onClick={handleBGTheam}
         >
           <CiLight/>
         </button>
@@ -76,7 +86,7 @@ export default function Header() {
             </Link>
           ))}
 
-          <button className="w-full mt-4 bg-pink-600 text-white py-2 rounded">
+          <button className="w-full mt-4 bg-pink-600 text-white py-2 rounded" onClick={handleBGTheam}>
             <CiLight/>
           </button>
         </div>
