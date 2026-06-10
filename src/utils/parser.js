@@ -14,7 +14,9 @@ export const parseSEOData = (text) => {
     // Category row
     if (
       parts.length >= 3 &&
-      parts[1].toLowerCase().includes("traget url")
+      parts[1].toLowerCase().includes("traget url") ||
+          parts[1].toLowerCase().includes("target url")
+
     ) {
       currentCategory = parts[0].trim();
 

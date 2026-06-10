@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [Theam,setTheam] =  useState()
+  const [theam,setTheam] =  useState(false)
 
   const navItems = [
     { name: "Home", href: "/" },
